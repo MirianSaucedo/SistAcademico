@@ -1,0 +1,24 @@
+<%= form_for(@alumnos) do |f| %>
+  <p id="notice"><%= notice %></p>
+   <p class="error"><%= flash[:error] %></p>
+ 
+
+  <%= f.label :cedula_identidad %>
+  <%= f.text_field :cedula_identidad %>
+  <%= f.label :direccion %>
+  <%= f.text_field :direccion %>
+  <%= f.label :nombre_del_responsable %>
+  <%= f.text_field :nombre_del_responsable %>
+  <%= f.label :telefono_responsable %>
+  <%= f.text_field :telefono_responsable%>
+  <%= f.label :fecha_ingreso %>
+  <%= f.text_field :fecha_ingreso %>
+  <%= f.label :curso %>
+  <%= f.collection_select :curso_id ,@cursos, :id, :curso %>
+  <%= f.label :turno %>
+  <%= f.select(:turno, ['Mañana', 'Tarde' ])%>
+  <%= f.label :nivel %>
+  <%= f.collection_select :nivel:id ,@niveles, :id, :nivel %>
+  
+  <%= f.submit "Guardar", class: "btn btn-large btn-primary" %>
+<% end %>

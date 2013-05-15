@@ -13,6 +13,24 @@
 
 ActiveRecord::Schema.define(:version => 20130429210103) do
 
+  create_table "alumnos", :force => true do |t|
+    t.string "nombres"
+    t.string "direccion"
+    t.string "lugar_nacimiento"
+    t.string "fecha_nacimiento"
+    t.string "sexo"
+    t.string "cedula_identidad"
+    t.string "direccion"
+    t.string "nombre_del_responsable"
+    t.string "telefono_responsable"
+    t.string "fecha_ingreso"
+    t.integer "curso_id"
+    t.string "turno"
+    t.integer "nivel_id"
+    t.string "username",                     :null => false
+    t.string "crypted_password"
+end
+
   create_table "addresses", :force => true do |t|
     t.string   "direccion"
     t.string   "barrio"
